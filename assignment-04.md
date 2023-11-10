@@ -23,15 +23,23 @@ very clever reason.
 as few coins as possible that sum to $N$.
 
 **enter answer in `answers.md`**
+for n dollars a greedy function would have to have a function to intalize an empty list to store coins gthen iterate through coin denominations in decrerasing order starting from the largest int. If however the curretn denomination is less or = to remaining N then add the max # of coins to the list. This will continue til N becomes 0 
 
 
 **1b)** Prove that this algorithm is optimal by proving the greedy
   choice and optimal substructure properties.
 
+  greedy - to prove this take a proffess of c be the coin denominations and N remaining largest coin denominiation would have to be C <= N. The alogiorthsm choice of the largest coin denomination at each step is greedy since its optimal choice since it looks at the largest coin denomination at each step
+
+  optimal substructure - this can be constructed a solution would be to construct optimal solutions to subproblems of the main problem. if we remove off occurrences of c and leave with N -c the optimal sub-problem would be to construct an optimal solution for the og problem. Combining optimal solutions from subproblems 
+
 **enter answer in `answers.md`**
 
 
 **1c)** What is the work and span of your algorithm?
+
+work = O(1) because its constant and iterates through each step. since its propeprotal to num of coins denominations 
+span = O(1) because its also proportion to num of coin denominations and the process denomination equality since each step depends on the previous 
 
 **enter answer in `answers.md`**
 
@@ -52,12 +60,24 @@ possible?
   greedy algorithm does not produce the fewest number of coins.
   
 **enter answer in `answers.md`**
+useing the denomaination fo {4,3,1} and n=6
+1. choose largest denomination less or equal to N = 4
+2. N=2 (6-4)
+3. choose larges denominatin less than or equal to n = 1 now add one
+
+result is 6 4 +1+1
 
 
 **2b)** Since you paid attention in Algorithms class, you realize that
   while this problem does not have the greedy choice property it does
   have an optimal substructure property. State and prove this
   property.
+
+  for it to be an optimal substrucute it would need to have strucutes for it subproblem as well.
+
+  D - denominations N == num of coins to make change 
+
+  n - D(i) 
 
 **enter answer in `answers.md`**
 
@@ -67,6 +87,10 @@ possible?
   or bottom-up memoization to avoid recomputing solutions to
   subproblems, what is the work and span of your approach?
 
+work would be O(kN) span O(n) (k is denominations) 
+
+my process was to make a dynamic program that would be efficient for most of the expected values 
+stargting with a for loop that would check the range and then add N+1 and then update the table if the coin reduces the num of coins needed. Then have a final entry in the table continuing the min number of coin. using bottom up allows for largest tob 
 **enter answer in `answers.md`**
 
 
